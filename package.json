@@ -1,4 +1,5 @@
 {
+  "homepage": "https://dhirajpatel.github.io/beehivelyicons",
   "name": "beehivelyicons",
   "version": "0.1.0",
   "private": true,
@@ -16,9 +17,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
