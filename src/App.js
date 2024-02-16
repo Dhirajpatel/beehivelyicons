@@ -6,11 +6,22 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [iconList, setIconList] = useState([]);
   const [copiedIcon, setCopiedIcon] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const icons = Object.keys(Icon);
     setIconList(icons);
+
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode) {
+      setDarkMode(JSON.parse(savedDarkMode));
+    }
   }, []);
+
+  useEffect(() => {
+    // Save dark mode preference in localStorage
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const filteredIcons = iconList.filter(icon => icon.toLowerCase().includes(searchTerm.toLowerCase()));
 
@@ -23,21 +34,26 @@ function App() {
       .catch((err) => console.error('Failed to copy text: ', err));
   };
 
+  const handleDarkModeToggle = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
       <header className="header">
         <div>
           <span className="logo">Beehively Icons</span>
-          <code>
+          <span className='code'>
             v1.0.3
-          </code>
+          </span>
         </div>
         <div className='topRight'>
           <a target="_blank" rel="noopener noreferrer" href="https://github.com/Dhirajpatel/beehively-icons" className="link">GitHub</a>
-          <button aria-label="Activate dark mode" className="iconButton">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
+          <button className="iconButton" onClick={handleDarkModeToggle}>
+            {!darkMode ?
+              <Icon.Moon />
+              :
+              <Icon.Sun />}
           </button>
         </div>
       </header>
