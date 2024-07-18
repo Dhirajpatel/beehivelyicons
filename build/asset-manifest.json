@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/beehivelyicons/static/css/main.ce650923.css",
-    "main.js": "/beehivelyicons/static/js/main.1abba6f4.js",
+    "main.js": "/beehivelyicons/static/js/main.39dfd75d.js",
     "static/js/592.d4a974dd.chunk.js": "/beehivelyicons/static/js/592.d4a974dd.chunk.js",
     "index.html": "/beehivelyicons/index.html",
     "main.ce650923.css.map": "/beehivelyicons/static/css/main.ce650923.css.map",
-    "main.1abba6f4.js.map": "/beehivelyicons/static/js/main.1abba6f4.js.map",
+    "main.39dfd75d.js.map": "/beehivelyicons/static/js/main.39dfd75d.js.map",
     "592.d4a974dd.chunk.js.map": "/beehivelyicons/static/js/592.d4a974dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce650923.css",
-    "static/js/main.1abba6f4.js"
+    "static/js/main.39dfd75d.js"
   ]
 }
