@@ -44,7 +44,7 @@ function App() {
         <div>
           <span className="logo">Beehively Icons</span>
           <span className='code'>
-            v1.0.9
+            v1.1.0
           </span>
         </div>
         <div className='topRight'>
