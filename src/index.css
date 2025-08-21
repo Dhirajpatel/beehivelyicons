@@ -1,43 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --active-color: #e27523;
+  --border: rgba(0, 0, 0, 0.15);
+}
 
-html, body {
+[data-theme="dark"] {
+  --bg-color: #213547;
+  --text-color: #ffffff;
+  --active-color: #ff9800;
+  --border: rgba(255, 255, 255, 0.15);
+}
+a {
+  font-weight: 500;
+  color: var(--active-color);
+  text-decoration: inherit;
+}
+a:hover, a.active {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
   font-size: 16px;
   font-weight: 400;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 *, ::before, ::after {
   box-sizing: border-box;
 }
 
-.App {
-  background-color: #f6f8fa;
+.root {
   min-height: 100vh;
-  color: #333;
-}
-
-.dark-mode {
-  background-color: #24292e;
-  color: #fff;
-}
-
-.code {
-  display: inline-block;
-  padding: 4px 10px;
-  font-weight: 500;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-left: 8px;
-  font-size: 14px;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  pointer-events: none;
 }
 
 .header {
@@ -48,41 +53,43 @@ html, body {
   padding: 16px 24px;
 }
 
-.link {
-  color: #106982;
-  text-decoration: none;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.link:hover, .iconButton {
-  color: #333;
+.logo img {
+  width: 40px;
 }
 
-.dark-mode .link {
-  color: #1ca6af;
-  text-decoration: none;
-}
-
-.dark-mode .link:hover, .dark-mode .iconButton {
-  color: #fff;
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .topRight {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-.iconButton {
+button {
   border: none;
   outline: none;
   margin: 0;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
+  color: var(--text-color);
 }
 
-.main {
+main {
   padding: 24px;
 }
 
@@ -99,9 +106,8 @@ html, body {
   line-height: 1;
   font-family: inherit;
   color: inherit;
-  background-color: #fff;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  border: 0;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border);
   border-radius: 6px;
 }
 
@@ -130,9 +136,9 @@ html, body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--bg-color);
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border: 1px solid var(--border);
   outline: 0px;
 }
 
@@ -165,11 +171,14 @@ html, body {
   height: 20px;
   right: 5%;
   top: 5%;
-  color: #999;
+  color: var(--active-color);
 }
 
 .iconItem:hover .copyIcon {
   opacity: 1;
+}
+.iconItem:hover {
+  border: 1px solid var(--active-color);
 }
 
 .copyText {
@@ -179,8 +188,8 @@ html, body {
   top: 0;
   bottom: 0;
   margin: auto;
-  background-color: #19528a;
-  color: #fff;
+  background-color: var(--active-color);
+  color: var(--text-color);
   text-align: center;
   z-index: 1;
   height: 40px;
@@ -189,8 +198,4 @@ html, body {
   -moz-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
-}
-
-.dark-mode .searchInput, .dark-mode .iconItem {
-  background-color: #30363e;
 }
