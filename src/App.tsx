@@ -29,10 +29,10 @@ const Header: React.FC = () => {
 
       <div className='topRight'>
         <nav className='navbar'>
-          <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
-            Home
+          <NavLink to="/beehivelyicons/" end className={({ isActive }) => (isActive ? "active" : "")}>
+            New Package
           </NavLink>
-          <NavLink to="/oldpackage" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink to="/beehivelyicons/oldpackage" className={({ isActive }) => (isActive ? "active" : "")}>
             Old Package
           </NavLink>
           <a href={githubUrl} target="_blank" rel="noopener noreferrer">
@@ -53,8 +53,8 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/oldpackage" element={<Oldpackage />} />
+          <Route path="/beehivelyicons/" element={<Home />} />
+          <Route path="/beehivelyicons/oldpackage" element={<Oldpackage />} />
         </Routes>
       </main>
     </Router>
